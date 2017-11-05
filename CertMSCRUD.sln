@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertMSCRUD", "CertMSCRUD\CertMSCRUD.csproj", "{2D76D205-B48F-43AD-8633-52E0EF441B09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertMSCRUD.Tests", "CertMSCRUD.Tests\CertMSCRUD.Tests.csproj", "{84012187-F84E-4AF7-90AF-2A1BAED8C743}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D76D205-B48F-43AD-8633-52E0EF441B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D76D205-B48F-43AD-8633-52E0EF441B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D76D205-B48F-43AD-8633-52E0EF441B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D76D205-B48F-43AD-8633-52E0EF441B09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84012187-F84E-4AF7-90AF-2A1BAED8C743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84012187-F84E-4AF7-90AF-2A1BAED8C743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84012187-F84E-4AF7-90AF-2A1BAED8C743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84012187-F84E-4AF7-90AF-2A1BAED8C743}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B274728-5F2A-4893-BB7F-52D0106E749B}
+	EndGlobalSection
+EndGlobal

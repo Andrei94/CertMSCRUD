@@ -29,5 +29,13 @@ namespace CertMSCRUD.Tests
 		{
 			AreEqual(1, service.Save(sn, subj, issuer, from, until, eProperties));
 		}
+
+		[Theory]
+		[MemberData(nameof(ValidCertificateProvider))]
+		public void UpdateValidCertificate(string sn, string subj, string issuer, DateTime? from, DateTime? until, IDictionary<string, string> eProperties)
+		{
+			service.Save(sn, "t", "ich", DateTime.Today, DateTime.Today.AddDays(-1), null);
+			AreEqual(1, service.Update(sn, "123", subj, issuer, from, until, eProperties));
+		}
 	}
 }

@@ -20,7 +20,7 @@ namespace CertMSCRUD
 			       FormatedIssuer + Environment.NewLine +
 			       FormatedStartDate + Environment.NewLine +
 			       FormatedExpirationDate + Environment.NewLine +
-			       string.Join(Environment.NewLine, ExtraProperties.Select(pair => string.IsNullOrWhiteSpace(pair.Value) ? string.Empty : $"{pair.Key}: {pair.Value}")).Trim();
+			       string.Join(Environment.NewLine, ExtraProperties?.Select(pair => string.IsNullOrWhiteSpace(pair.Value) ? string.Empty : $"{pair.Key}: {pair.Value}") ?? new List<string>()).Trim();
 		}
 
 		private string FormatedSerialNumber => string.IsNullOrWhiteSpace(SerialNumber) ? string.Empty : $"SerialNumber: {SerialNumber}";
@@ -28,9 +28,5 @@ namespace CertMSCRUD
 		private string FormatedIssuer => string.IsNullOrWhiteSpace(Issuer) ? string.Empty : $"Issuer: {Issuer}";
 		private string FormatedStartDate => ValidFrom == null ? string.Empty : $"Valid From: {ValidFrom?.Date:MM/dd/yyyy}";
 		private string FormatedExpirationDate => ValidFrom == null ? string.Empty : $"Valid Until: {ValidUntil?.Date:MM/dd/yyyy}";
-	}
-
-	public class InnexistentCertificate : Certificate
-	{
 	}
 }

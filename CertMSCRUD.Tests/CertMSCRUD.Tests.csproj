@@ -65,7 +65,7 @@
     <Compile Include="CertificateServiceTest.cs" />
     <Compile Include="CertificateTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaveViewModelTest.cs" />
+    <Compile Include="CrudViewModelTest.cs" />
     <Compile Include="Utils\CertificateCreatorDummy.cs" />
     <Compile Include="Utils\TestUtils.cs" />
     <Compile Include="Utils\ViewDummy.cs" />

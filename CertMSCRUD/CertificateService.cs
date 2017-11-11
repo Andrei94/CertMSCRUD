@@ -12,9 +12,8 @@ namespace CertMSCRUD
 			this.dao = dao;
 		}
 
-		public int Save(string serialNumber, string subject, string issuer, DateTime? validFrom, DateTime? validUntil, IDictionary<string, string> extraProperties)
-		{
-			return dao.Save(new Certificate
+		public int Save(string serialNumber, string subject, string issuer, DateTime? validFrom, DateTime? validUntil, IDictionary<string, string> extraProperties) => dao.Save(
+			new Certificate
 			{
 				SerialNumber = serialNumber,
 				Subject = subject,
@@ -23,13 +22,26 @@ namespace CertMSCRUD
 				ValidUntil = validUntil,
 				ExtraProperties = extraProperties
 			});
-		}
 
 		public int CertificateCount => dao.Size;
 
-		public bool Delete(string serialNumber)
+		public bool Delete(string serialNumber) => dao.Delete(serialNumber);
+
+		public int Update(string serialNumber, string newSerialNumber, string newSubject, string newIssuer, DateTime? newValidFrom, DateTime? newValidUntil,
+			IDictionary<string, string> newExtraProperties) => dao.Update(serialNumber,
+			new Certificate
+			{
+				SerialNumber = newSerialNumber,
+				Subject = newSubject,
+				Issuer = newIssuer,
+				ValidFrom = newValidFrom,
+				ValidUntil = newValidUntil,
+				ExtraProperties = newExtraProperties
+			});
+
+		public IEnumerable<Certificate> GetAll()
 		{
-			return dao.Delete(serialNumber);
+			return dao.GetAll();
 		}
 	}
 }

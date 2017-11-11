@@ -8,7 +8,7 @@ namespace CertMSCRUD
 
 		public int Save(Certificate certificate)
 		{
-			if (certificates.ContainsKey(certificate.SerialNumber)) return 0;
+			if (certificate.SerialNumber == null || certificates.ContainsKey(certificate.SerialNumber)) return 0;
 
 			certificates.Add(certificate.SerialNumber, certificate);
 			return 1;
@@ -17,9 +17,11 @@ namespace CertMSCRUD
 		public bool Delete(string key) => !string.IsNullOrWhiteSpace(key) && certificates.Remove(key);
 		public int Size => certificates.Count;
 
-		public Certificate FindBySerial(string serialNumber)
+		public int Update(string serialNumber, Certificate newCertificate) => Delete(serialNumber) ? Save(newCertificate) : 0;
+
+		public IEnumerable<Certificate> GetAll()
 		{
-			return certificates.ContainsKey(serialNumber) ? certificates[serialNumber] : new InnexistentCertificate();
+			return certificates.Values;
 		}
 	}
 }

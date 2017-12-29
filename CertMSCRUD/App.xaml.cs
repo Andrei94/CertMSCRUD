@@ -12,7 +12,7 @@ namespace CertMSCRUD
 		protected override void OnStartup(StartupEventArgs e)
 		{
 			base.OnStartup(e);
-			var response = string.Empty;
+			var response = "failure";
 			if(e.Args[0].Equals("save"))
 			{
 				viewModel = new SaveViewModel(new MainWindow());

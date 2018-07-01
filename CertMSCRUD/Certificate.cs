@@ -6,12 +6,12 @@ namespace CertMSCRUD
 {
 	public class Certificate
 	{
-		public string SerialNumber { get; set; }
-		public string Subject { get; set; }
-		public string Issuer { get; set; }
-		public DateTime? ValidFrom { get; set; }
-		public DateTime? ValidUntil { get; set; }
-		public IDictionary<string, string> ExtraProperties { get; set; } = new Dictionary<string, string>();
+		public virtual string SerialNumber { get; set; }
+		public virtual string Subject { get; set; }
+		public virtual string Issuer { get; set; }
+		public virtual DateTime? ValidFrom { get; set; }
+		public virtual DateTime? ValidUntil { get; set; }
+		public virtual IDictionary<string, string> ExtraProperties { get; set; } = new Dictionary<string, string>();
 
 		public override string ToString()
 		{

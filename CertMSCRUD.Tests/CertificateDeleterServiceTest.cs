@@ -7,7 +7,7 @@ namespace CertMSCRUD.Tests
 {
 	public class CertificateDeleterServiceTest
 	{
-		private readonly CertificateService service = new CertificateService(new CertificateDao());
+		private readonly CertificateService service = new CertificateService(new InMemoryCertificateDao());
 		public CertificateDeleterServiceTest() => service.Save("123456", "test", "me", DateTime.Today, DateTime.Today.AddDays(1), new Dictionary<string, string>());
 
 		[Theory]

@@ -23,7 +23,7 @@ namespace CertMSCRUD
 				ExtraProperties = extraProperties
 			});
 
-		public int CertificateCount => dao.Size;
+		public long CertificateCount => dao.Size;
 
 		public bool Delete(string serialNumber) => dao.Delete(serialNumber);
 

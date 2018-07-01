@@ -7,7 +7,7 @@ namespace CertMSCRUD.Tests
 {
 	public class CertificateServiceTest
 	{
-		private readonly CertificateService service = new CertificateService(new CertificateDao());
+		private readonly CertificateService service = new CertificateService(new InMemoryCertificateDao());
 
 		// ReSharper disable once MemberCanBePrivate.Global MemberData works ONLY with public providers
 		public static IEnumerable<object[]> ValidCertificateProvider()

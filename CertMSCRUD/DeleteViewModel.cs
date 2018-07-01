@@ -1,16 +1,13 @@
-﻿using System;
-using CertMS.Helpers;
-using WPFCommonUI;
+﻿using WPFCommonUI;
 
 namespace CertMSCRUD
 {
 	public class DeleteViewModel : ViewModelBase<IMainView>
 	{
-		private CertificateService CertificateService { get; } = new CertificateService(new CertificateDao());
+		public CertificateService CertificateService { get; set; } = new CertificateService(new MongoCertificateDao());
 
 		public DeleteViewModel(IMainView view) : base(view)
 		{
-			CertificateService.Save("1234", "test", "me", DateTime.Today, DateTime.Today, null);
 		}
 
 		public string PerformDelete(string data)

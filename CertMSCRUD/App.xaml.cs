@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using System.Windows;
 using WPFCommonUI;
 
@@ -12,28 +11,28 @@ namespace CertMSCRUD
 		protected override void OnStartup(StartupEventArgs e)
 		{
 			base.OnStartup(e);
-			var response = "failure";
-			if(e.Args[0].Equals("save"))
+			var response = AppProperties.FailureMsg;
+			if(e.Args[0].Equals(AppProperties.Save))
 			{
 				viewModel = new SaveViewModel(new MainWindow());
 				response = ((SaveViewModel) viewModel).PerformSave(e.Args[1]);
 			}
-			else if(e.Args[0].Equals("save_duplicate"))
+			else if(e.Args[0].Equals(AppProperties.SaveDuplicate))
 			{
 				viewModel = new SaveViewModelDuplicate(new MainWindow());
 				response = ((SaveViewModelDuplicate) viewModel).PerformSave(null);
 			}
-			else if(e.Args[0].Equals("delete"))
+			else if(e.Args[0].Equals(AppProperties.Delete))
 			{
 				viewModel = new DeleteViewModel(new MainWindow());
 				response = ((DeleteViewModel) viewModel).PerformDelete(e.Args[1]);
 			}
-			else if(e.Args[0].Equals("update"))
+			else if(e.Args[0].Equals(AppProperties.Update))
 			{
 				viewModel = new UpdateViewModel(new MainWindow());
-				response = ((UpdateViewModel) viewModel).PerformUpdate(e.Args[1]);
+				response = ((UpdateViewModel) viewModel).PerformUpdate(e.Args[1] + e.Args[2]);
 			}
-			else if(e.Args[0].Equals("getAll"))
+			else if(e.Args[0].Equals(AppProperties.GetAll))
 			{
 				viewModel = new GetAllViewModel(new MainWindow());
 				response = ((GetAllViewModel) viewModel).PerformGetAll();
